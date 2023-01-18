@@ -1,0 +1,109 @@
+<div class="content">
+  <h1>Multiply, divide and square root</h1>
+
+  <!-- Alert window -->
+  <div
+    [ngClass]="{ visible: isAlert }"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    <span class="error-text">ERROR...</span>
+    {{
+      isRootAlert ? "Root value cannot be less than zero" : "Division by zero"
+    }}
+  </div>
+
+  <!-- Main form -->
+  <form class="form">
+    <div>
+      <!-- Input block -->
+      <div class="d-flex flex-column">
+        <!-- First input -->
+        <label class="custom-input">
+          <div class="input-block">
+            <input
+              name="firstNumber"
+              [(ngModel)]="firstNumber"
+              type="number"
+              required
+            />
+            <span class="p-holder">First Number</span>
+            <img
+              (click)="clearBtn1()"
+              class="clear-button"
+              *ngIf="firstNumber || firstNumber == 0"
+              src="../../../assets/X.svg"
+              alt="x-icon"
+            />
+          </div>
+          <button
+            (click)="multiply(firstNumber, secondNumber)"
+            class="btn btn-outline-info"
+            type="text"
+          >
+            X
+          </button>
+        </label>
+
+        <!-- Second input -->
+        <label class="custom-input">
+          <div class="input-block">
+            <input
+              name="secondNumber"
+              [(ngModel)]="secondNumber"
+              type="number"
+              required
+            />
+            <span class="p-holder">Second Number</span>
+            <img
+              (click)="clearBtn2()"
+              class="clear-button"
+              *ngIf="secondNumber || secondNumber == 0"
+              src="../../../assets/X.svg"
+              alt="x-icon"
+            />
+          </div>
+          <button
+            (click)="division(firstNumber, secondNumber)"
+            class="btn btn-outline-danger"
+            type="text"
+          >
+            ÷
+          </button>
+        </label>
+      </div>
+    </div>
+
+    <!-- Third input -->
+    <label class="custom-input">
+      <div class="input-block">
+        <input name="a" [(ngModel)]="a" type="number" required />
+        <span class="p-holder">Square root</span>
+        <img
+          (click)="clearBtn3()"
+          class="clear-button"
+          *ngIf="a || a == 0"
+          src="../../../assets/X.svg"
+          alt="x-icon"
+        />
+      </div>
+      <button (click)="sqrt(a)" class="btn btn-outline-secondary" type="text">
+        √
+      </button>
+    </label>
+
+    <!-- Output of the result -->
+    <h2
+      class="result"
+      [ngClass]="{
+        visible:
+          ((answer || answer == 0) &&
+            (firstNumber || firstNumber == 0) &&
+            (secondNumber || secondNumber == 0)) ||
+          a > 0
+      }"
+    >
+      Result: <span>{{ answer | number : "1.0-5" }}</span>
+    </h2>
+  </form>
+</div>
