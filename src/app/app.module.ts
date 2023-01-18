@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoFoundComponent } from './components/no-found/no-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavBarComponent } from './pizza/pages/nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     HomeComponent,
     NoFoundComponent,
     FooterComponent,
+    NavBarComponent,
   ],
 
   imports: [
