@@ -1,10 +1,6 @@
 .header {
-  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 11;
-  // margin-bottom: 70px;
+
 }
 
 .container-header {
@@ -15,7 +11,8 @@
   height: 70px;
   margin: 0 auto;
 }
-// Logo
+
+// Logo main
 .logo-block {
   display: flex;
   align-items: center;
@@ -32,37 +29,46 @@
     }
   }
 }
+
+//Logo Pizza
+.logo-img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
 // Navigation
 nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
+
   a {
+    position: relative;
     display: flex;
     flex-direction: column;
     color: white;
     padding: 10px;
 
-    &::after{
-    content: '';
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    opacity: 0;
-    border-radius: 50%;
-    border: 1px solid white;
-    transition: all 0.5s ease-in-out;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+      border: 1px solid white;
+      transform: scaleX(0);
+      transition: all 250ms ease-in-out;
     }
-&:hover{
-  color: lightgrey;
-  &::after{
-    content: '';
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    opacity: 1;
-    border-radius: 50%;
-    border: 1px solid aqua;
-    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: lightgrey;
+
+      &::after {
+        transform: scaleX(1);
+        transition: all 250ms ease-in-out;
 
       }
     }
@@ -70,7 +76,9 @@ nav {
 
   .active {
     color: aqua;
-    &:hover{color: aqua;}
+
+    &:hover {
+      color: aqua;
+    }
   }
 }
-

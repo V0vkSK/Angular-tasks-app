@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,11 +11,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoFoundComponent } from './components/no-found/no-found.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavBarComponent } from './pizza/pages/nav-bar/nav-bar.component';
+import { PizzasComponent } from './pages/pizza-shop/pizzas/pizzas.component';
+import { PizzaItemComponent } from './pages/pizza-shop/pizza-item/pizza-item.component';
+import { BiscuitComponent } from './components/biscuit/biscuit.component';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calc', component: CalculatorComponent },
+  { path: 'biscuit', component: BiscuitComponent },
+  { path: 'pizzas', component: PizzasComponent },
   { path: '**', component: NoFoundComponent }
 
 ]
@@ -27,7 +34,11 @@ const appRoutes: Routes = [
     HomeComponent,
     NoFoundComponent,
     FooterComponent,
-    NavBarComponent,
+    PizzasComponent,
+    PizzaItemComponent,
+    BiscuitComponent,
+
+
   ],
 
   imports: [
@@ -35,6 +46,7 @@ const appRoutes: Routes = [
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule
 
   ],
   providers: [],

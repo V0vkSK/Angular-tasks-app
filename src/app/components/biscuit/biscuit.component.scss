@@ -1,0 +1,411 @@
+h1 {
+  justify-self: center;
+  color: var(--grey-text);
+}
+
+.title-biscuit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert {
+  width: 300px;
+}
+
+.container {
+  width: 700px;
+  border: 1px solid white;
+  height: 500px;
+  border-radius: 5%;
+}
+
+.animation {
+  position: relative;
+  width: 900px;
+  height: 280px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.extruder {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  width: 40px;
+  height: 60px;
+  outline: 1px solid white;
+}
+
+.stamper {
+  position: absolute;
+  top: 30px;
+  left: 130px;
+  display: flex;
+  width: 40px;
+  height: 100px;
+  outline: 1px solid white;
+}
+
+.motor_1 {
+  position: absolute;
+  top: 140px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-image: url('../../../assets/X.png');
+  background-size: contain;
+}
+
+.motor_2 {
+  position: absolute;
+  top: 140px;
+  left: 470px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-image: url('../../../assets/X.png');
+  background-size: contain;
+}
+
+.motor_active {
+  animation-name: motor;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes motor {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(1360deg);
+
+  }
+}
+
+.conveyor {
+  position: absolute;
+  top: 140px;
+  left: 20px;
+  width: 500px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  outline: 1px dashed white;
+}
+
+.oven {
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  width: 150px;
+  height: 88px;
+  display: flex;
+  outline: 1px solid white;
+
+}
+
+.heater {
+  position: absolute;
+  top: 60px;
+  left: 260px;
+  width: 130px;
+  height: 4px;
+  display: flex;
+  outline: 1px solid white;
+  border-radius: 5px;
+}
+
+.heater_active {
+  outline: 1px solid red;
+  background-color: red;
+  box-shadow: 1px 5px 20px 4px red;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  font-size: 15px;
+  padding: 0 15px;
+}
+
+input {
+  width: 70px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.temp {
+  position: absolute;
+  top: 80px;
+  left: 260px;
+  color: white;
+}
+
+.time {
+  position: absolute;
+  top: 300px;
+  left: 400px;
+  color: lightgray;
+}
+
+.basket {
+  position: absolute;
+  top: 170px;
+  left: 525px;
+  width: 130px;
+  height: 85px;
+  display: flex;
+  border: 1px solid white;
+  border-top: transparent;
+}
+
+.btn {
+  width: 100px;
+}
+
+.anim_pause {
+  animation-play-state: paused;
+}
+
+.anim_resume {
+  animation-play-state: running;
+}
+
+.cake1_1 {
+  position: absolute;
+  top: 100px;
+  left: 55px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  animation-name: c1-1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c1-1 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    background-color: white;
+    border-radius: 50% 50% 0 0;
+    transform: translateY(27px);
+  }
+}
+
+.cake1_2 {
+  position: absolute;
+  top: 133px;
+  left: 55px;
+  width: 10px;
+  height: 5px;
+  background-color: white;
+  border: 1px solid white;
+  animation-name: c1-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c1-2 {
+  0% {
+    width: 10px;
+    height: 5px;
+    transform: translateX(0px);
+  }
+
+  100% {
+    width: 20px;
+    height: 5px;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(85px);
+  }
+}
+
+
+.cake2_1 {
+  position: absolute;
+  top: 133px;
+  left: 140px;
+  width: 20px;
+  height: 5px;
+  border-radius: 50% 50% 0 0;
+  background-color: white;
+  border: 1px solid white;
+  animation-name: c2-1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c2-1 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    border-radius: 50% 50% 0 0;
+    transform: translateX(85px);
+  }
+}
+
+.cake2_2 {
+  position: absolute;
+  top: 133px;
+  left: 225px;
+  width: 20px;
+  height: 5px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50% 50% 0 0;
+  animation-name: c2-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c2-2 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    border: 1px solid burlywood;
+    background-color: burlywood;
+    transform: translateX(85px);
+
+  }
+}
+
+.cake3_1 {
+  position: absolute;
+  top: 133px;
+  left: 310px;
+  width: 20px;
+  height: 5px;
+  border: 1px solid burlywood;
+  background-color: burlywood;
+  border-radius: 50% 50% 0 0;
+  animation-name: c3-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.cake3_2 {
+  position: absolute;
+  top: 133px;
+  left: 395px;
+  width: 20px;
+  height: 5px;
+  border: 1px solid burlywood;
+  background-color: burlywood;
+  border-radius: 50% 50% 0 0;
+  animation-name: c3-2;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c3-2 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(85px);
+  }
+}
+
+.cake3_3 {
+  position: absolute;
+  top: 133px;
+  left: 480px;
+  width: 20px;
+  height: 5px;
+  border: 1px solid burlywood;
+  background-color: burlywood;
+  border-radius: 50% 50% 0 0;
+  animation-name: c3-3;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes c3-3 {
+  0% {
+    transform: translateX(0px);
+  }
+
+  35% {
+    top: 133px;
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 40deg;
+    top: 170px;
+    transform: translateX(85px);
+  }
+}
+
+.block-info {
+  position: absolute;
+  top: 290px;
+  left: 390px;
+  display: flex;
+  width: 165px;
+  height: 150px;
+  border-radius: 5px;
+  outline: 1px solid lightblue;
+}
+
+.status {
+  color: white;
+  margin-left: 100px;
+  position: absolute;
+  top: 350px;
+  left: 330px;
+}
+
+.status__1 {
+  color: white;
+  margin-left: 100px;
+  position: absolute;
+  top: 370px;
+  left: 330px;
+}
+
+.status__2 {
+  color: white;
+  margin-left: 100px;
+  position: absolute;
+  top: 390px;
+  left: 330px;
+}
+
+.status__3 {
+  color: white;
+  margin-left: 100px;
+  position: absolute;
+  top: 410px;
+  left: 330px;
+}

@@ -35,15 +35,8 @@ h1 {
 //Animation of Alert
 .alert {
   position: absolute;
-  top: -53px;
-  right: 20px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.visible {
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
+  top: 103px;
+  right: 50px;
 }
 
 // Placeholder position and moving

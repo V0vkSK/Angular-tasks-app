@@ -1,28 +1,42 @@
 <div class="header">
-  <div class="container-header">
+  <div *ngIf="toggleMenuPizza" class="container-header">
     <a routerLink="/" class="logo-block">
       <h2>Web<span>VSK</span>Studio</h2>
     </a>
+    <!-- Main navigation -->
     <nav class="nav-block">
-
-          <a routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a>
-          <a routerLink="/calc/" routerLinkActive="active">Calculator</a>
-
-    </nav>
-
-    <nav class="nav-pizza-block">
-
-          <a routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Home</a>
-          <a routerLink="/calc/" routerLinkActive="active">Calculator</a>
-
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a routerLink="/calc/" routerLinkActive="active">Calculator</a>
+      <a routerLink="/biscuit/" routerLinkActive="active">Biscuit machine</a>
+      <a routerLink="/pizzas/" routerLinkActive="active" (click)="toggleMenu()"
+        >Pizza-shop</a
+      >
     </nav>
   </div>
-
+  <div *ngIf="!toggleMenuPizza" class="container-header">
+    <!-- Pizza navigation -->
+    <a routerLink="/" class="logo-block" (click)="toggleMenu()">
+      <img
+        class="logo-img"
+        src="../../../assets/img/Pizza1.jpeg"
+        alt="pizza-logo"
+      />
+      <h2>Pizza<span>VSK</span>Shop</h2>
+    </a>
+    <nav class="nav-pizza-block">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="toggleMenu()"
+        >Home</a
+      >
+    </nav>
+  </div>
 </div>
 `

@@ -1,0 +1,111 @@
+<div class="title-biscuit">
+  <h1>Biscuit machine</h1>
+  <!-- Alert window -->
+  <div
+    [ngClass]="{ alert_visible: isAlert }"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    <span class="error-text">Machine is "On" now and HOT !!!</span>
+  </div>
+</div>
+<div class="container">
+  <div class="animation">
+    <div class="extruder"></div>
+    <div [ngClass]="{ motor_active: isMotorOn }" class="motor_1"></div>
+    <div [ngClass]="{ motor_active: isMotorOn }" class="motor_2"></div>
+    <div
+      [ngClass]="{
+        cake1_1: cake1,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake1_2: cake2,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake2_1: cake3,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake2_2: cake4,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake3_1: cake5,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake3_2: cake6,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div
+      [ngClass]="{
+        cake3_3: cake7,
+        anim_pause: anim_pause,
+        anim_resume: anim_resume
+      }"
+    ></div>
+    <div class="stamper"></div>
+    <div class="conveyor"></div>
+
+    <!-- Output informations -->
+    <div class="block-info"></div>
+    <div class="temp">Сurrent t°C: {{ tempCurrent | number : "3.0-0" }}°C</div>
+    <div class="time">Working time: {{ timeWork | number : "1.0-0" }} sec</div>
+    <div class="oven"></div>
+    <div [ngClass]="{ heater_active: isHeaterOn }" class="heater"></div>
+    <div class="basket"></div>
+    <p class="status">Switch: {{ status }}</p>
+    <p class="status__1">
+      Oven: <span> {{ isHeaterOn ? "On" : "Off" }}</span>
+    </p>
+    <p class="status__2">Pause: {{ pause ? "On" : "Off" }}</p>
+    <p class="status__3">Motor: {{ isMotorOn ? "On" : "Off" }}</p>
+  </div>
+  <div class="d-flex flex-column">
+    <!-- Block of inputs -->
+    <label for="tps"
+      >Enter heat up of oven C° per second
+      <input [(ngModel)]="tps" name="tps" class="mb-3" type="number" />
+    </label>
+    <label for="initTemp"
+      >Enter init oven temperature
+      <input
+        [(ngModel)]="initTemp"
+        name="initTemp"
+        class="mb-3"
+        type="number"
+      />
+    </label>
+    <!-- ------------------------------------------- -->
+    <div class="d-flex flex-row">
+      <button (click)="switchOn()" class="btn me-2 btn-outline-info">
+        Switch on
+      </button>
+      <button (click)="switchPause()" class="btn me-2 btn-outline-success">
+        Pause
+      </button>
+      <button (click)="switchOff()" class="btn me-2 btn-outline-danger">
+        Switch off
+      </button>
+    </div>
+  </div>
+</div>
