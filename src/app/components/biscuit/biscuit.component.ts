@@ -140,13 +140,15 @@ export class BiscuitComponent implements OnInit {
   }
 
   switchPause() {
-    if (this.switch) {
+    if (this.switch && this.timeWork > 12) {
       clearInterval(this.timerId2);
       this.status = 'Pause'
       this.pause = true
       this.isMotorOn = false
       this.anim_pause = true
       this.anim_resume = false
+    } else {
+      alert(' Machine is not on mode now. Wait...')
     }
   }
 
