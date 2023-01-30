@@ -1,11 +1,10 @@
 <div class="container">
   <div *ngFor="let pizza of pizzas" class="pizza-item">
-    <img
-      class="pizza-img"
-      src="../../../../assets/img/Pizza1.jpeg"
-      alt="pizza-img"
-    />
+    <img class="pizza-img" src="/assets/{{ pizza.src }}" alt="pizza-img" />
     <h3 class="pizza-name">{{ pizza.name }}</h3>
-    <p class="pizza-price">Price:{{ pizza.price }}</p>
+    <div class="price-block">
+      <pre class="pizza-price">Price: <span>{{ pizza.price }}</span> USD</pre>
+      <img class="plus-icon" src="../../../../assets/plus.svg" alt="plus-btn" />
+    </div>
   </div>
 </div>

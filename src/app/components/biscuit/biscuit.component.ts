@@ -1,4 +1,5 @@
 import { getLocaleTimeFormat } from '@angular/common';
+import { BuiltinTypeName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -78,6 +79,7 @@ export class BiscuitComponent implements OnInit {
   }
 
   switchOn() {
+
 
     this.tempCurrent == 0 ? this.tempCurrent = this.initTemp : this.tempCurrent
     this.status = 'On';

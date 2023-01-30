@@ -97,13 +97,28 @@
     </label>
     <!-- ------------------------------------------- -->
     <div class="d-flex flex-row">
-      <button (click)="switchOn()" class="btn me-2 btn-outline-info">
+      <button
+        type="button"
+        (click)="switchOn()"
+        id="btn"
+        class="btn me-2 btn-outline-info"
+      >
         Switch on
       </button>
-      <button (click)="switchPause()" class="btn me-2 btn-outline-success">
+      <button
+        type="button"
+        (click)="switchPause()"
+        id="btn"
+        class="btn me-2 btn-outline-success"
+      >
         Pause
       </button>
-      <button (click)="switchOff()" class="btn me-2 btn-outline-danger">
+      <button
+        type="button"
+        (click)="switchOff()"
+        id="btn"
+        class="btn me-2 btn-outline-danger"
+      >
         Switch off
       </button>
     </div>

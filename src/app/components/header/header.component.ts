@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   toggleMenuPizza: boolean = true;
+  toggleCartOpen: boolean = false;
+  total: number = 0
 
   ngOnInit(): void {
 
@@ -17,5 +19,10 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.toggleMenuPizza = !this.toggleMenuPizza;
+  }
+
+  drawerOpen() {
+    this.toggleCartOpen = !this.toggleCartOpen
+    console.log(this.toggleCartOpen);
   }
 }

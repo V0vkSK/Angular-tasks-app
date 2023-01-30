@@ -74,6 +74,31 @@ nav {
     }
   }
 
+  .pizza-block {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .cart-link {
+    padding-left: 300px;
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+    }
+
+    p {
+      color: aqua;
+    }
+  }
+
   .active {
     color: aqua;
 
@@ -81,4 +106,15 @@ nav {
       color: aqua;
     }
   }
+}
+
+// Cart
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: darkblue;
+  opacity: 0.5;
 }

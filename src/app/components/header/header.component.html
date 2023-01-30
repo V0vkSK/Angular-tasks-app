@@ -1,9 +1,9 @@
-<div class="header">
+<header class="header">
+  <!-- Main header -->
   <div *ngIf="toggleMenuPizza" class="container-header">
     <a routerLink="/" class="logo-block">
       <h2>Web<span>VSK</span>Studio</h2>
     </a>
-    <!-- Main navigation -->
     <nav class="nav-block">
       <a
         routerLink="/"
@@ -18,8 +18,8 @@
       >
     </nav>
   </div>
+  <!-- Pizza header -->
   <div *ngIf="!toggleMenuPizza" class="container-header">
-    <!-- Pizza navigation -->
     <a routerLink="/" class="logo-block" (click)="toggleMenu()">
       <img
         class="logo-img"
@@ -28,7 +28,7 @@
       />
       <h2>Pizza<span>VSK</span>Shop</h2>
     </a>
-    <nav class="nav-pizza-block">
+    <nav class="pizza-block">
       <a
         routerLink="/"
         routerLinkActive="active"
@@ -36,7 +36,13 @@
         (click)="toggleMenu()"
         >Home</a
       >
+      <div class="cart-link" (click)="drawerOpen()">
+        <img src="../../../assets/shopping-cart-icon.svg" alt="cart-icon" />
+        <p>{{ total }} USD</p>
+      </div>
     </nav>
+    <!-- Cart  -->
   </div>
-</div>
+</header>
+<app-drawer *ngIf="toggleCartOpen"></app-drawer>
 `
