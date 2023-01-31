@@ -1,5 +1,13 @@
-<div class="overlay">
+<div *ngIf="isCartOpen" class="overlay">
   <div class="drawer">
-    <h2>Cart</h2>
+    <div class="cart-title">
+      <h2>Cart</h2>
+      <img
+        (click)="onPressCloseCart()"
+        src="../../../../assets/X.svg"
+        alt="x-icon"
+      />
+    </div>
+    <div class="line"></div>
   </div>
 </div>

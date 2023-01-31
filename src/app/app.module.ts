@@ -15,6 +15,7 @@ import { PizzasComponent } from './pages/pizza-shop/pizzas/pizzas.component';
 import { PizzaItemComponent } from './pages/pizza-shop/pizza-item/pizza-item.component';
 import { BiscuitComponent } from './components/biscuit/biscuit.component';
 import { DrawerComponent } from './pages/pizza-shop/drawer/drawer.component';
+import { SearchComponent } from './pages/pizza-shop/search/search.component';
 
 
 
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     PizzaItemComponent,
     BiscuitComponent,
     DrawerComponent,
+    SearchComponent,
 
 
   ],

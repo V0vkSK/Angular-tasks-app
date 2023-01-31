@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   toggleCartOpen: boolean = false;
   total: number = 0
 
+
   ngOnInit(): void {
 
     window.location.pathname == '/pizzas' ? this.toggleMenuPizza = false : ""
@@ -21,8 +22,8 @@ export class HeaderComponent implements OnInit {
     this.toggleMenuPizza = !this.toggleMenuPizza;
   }
 
-  drawerOpen() {
+  cartToggle() {
     this.toggleCartOpen = !this.toggleCartOpen
-    console.log(this.toggleCartOpen);
+
   }
 }

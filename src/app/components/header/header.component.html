@@ -36,7 +36,7 @@
         (click)="toggleMenu()"
         >Home</a
       >
-      <div class="cart-link" (click)="drawerOpen()">
+      <div class="cart-link" (click)="cartToggle()">
         <img src="../../../assets/shopping-cart-icon.svg" alt="cart-icon" />
         <p>{{ total }} USD</p>
       </div>
@@ -44,5 +44,7 @@
     <!-- Cart  -->
   </div>
 </header>
-<app-drawer *ngIf="toggleCartOpen"></app-drawer>
-`
+<app-drawer
+  (closeCart)="cartToggle()"
+  [isCartOpen]="toggleCartOpen"
+></app-drawer>

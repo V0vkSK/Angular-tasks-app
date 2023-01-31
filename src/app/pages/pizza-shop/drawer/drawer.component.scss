@@ -14,8 +14,10 @@
   top: 90px;
   right: 500px;
   display: flex;
+  flex-direction: column;
   width: 420px;
   height: 100%;
+  padding: 30px;
   background-color: whitesmoke;
   opacity: 1;
   border-radius: 15px;
@@ -23,6 +25,37 @@
   ;
 }
 
+.cart-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  img {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: translateY(1px);
+      opacity: 1;
+    }
+  }
+}
+
+.line {
+  // display: flex;
+  width: 90%;
+  height: 1px;
+  margin-left: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+
+}
+
 h2 {
-  padding: 20px;
+  display: flex;
 }

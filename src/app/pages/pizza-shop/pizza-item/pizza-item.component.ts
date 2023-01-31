@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class PizzaItemComponent {
   @Input() pizzas: any;
+
+  onPressPlus() {
+
+  }
+
 }

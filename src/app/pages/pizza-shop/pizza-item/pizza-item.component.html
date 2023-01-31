@@ -4,7 +4,7 @@
     <h3 class="pizza-name">{{ pizza.name }}</h3>
     <div class="price-block">
       <pre class="pizza-price">Price: <span>{{ pizza.price }}</span> USD</pre>
-      <img class="plus-icon" src="../../../../assets/plus.svg" alt="plus-btn" />
+      <img (click)="onPressPlus()" class="plus-icon" src="../../../../assets/plus.svg" alt="plus-btn" />
     </div>
   </div>
 </div>

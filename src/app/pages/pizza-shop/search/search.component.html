@@ -1,0 +1,16 @@
+<div class="d-flex">
+  <h2>{{ searchData ? "Searching of ..." + searchData : "All Pizzas" }}</h2>
+  <div class="custom-block">
+    <div class="input-block">
+      <input name="searchData" [(ngModel)]="searchData" type="text" />
+      <span class="p-holder">Enter pizza</span>
+      <img
+        (click)="clearBtn()"
+        class="clear-button"
+        *ngIf="searchData"
+        src="../../../assets/X.svg"
+        alt="x-icon"
+      />
+    </div>
+  </div>
+</div>

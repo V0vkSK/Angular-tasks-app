@@ -5,5 +5,6 @@ import { Pizza } from "src/app/models/pizzas";
 export interface State {
   ids: number[];
   pizzas: { [id: number]: Pizza },
-  selected: number
+  selected: number;
+  qty: number
 }
