@@ -1,5 +1,7 @@
 <div class="d-flex">
-  <h2>{{ searchData ? "Searching of ..." + searchData : "All Pizzas" }}</h2>
+  <h2>
+    {{ searchData ? "Searching of ..." + searchData : "All Pizzas" }}
+  </h2>
   <div class="custom-block">
     <div class="input-block">
       <input name="searchData" [(ngModel)]="searchData" type="text" />

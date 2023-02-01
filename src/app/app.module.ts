@@ -16,6 +16,7 @@ import { PizzaItemComponent } from './pages/pizza-shop/pizza-item/pizza-item.com
 import { BiscuitComponent } from './components/biscuit/biscuit.component';
 import { DrawerComponent } from './pages/pizza-shop/drawer/drawer.component';
 import { SearchComponent } from './pages/pizza-shop/search/search.component';
+import { SearchServiceService } from './services/search-service.service';
 
 
 
@@ -53,7 +54,7 @@ const appRoutes: Routes = [
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [SearchServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
-import { observable, Observable, Subject } from 'rxjs';
-import { Component, Output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { SearchServiceService } from 'src/app/services/search-service.service';
 
-const search = new Observable()
 
 @Component({
   selector: 'app-search',
@@ -13,16 +12,9 @@ const search = new Observable()
 export class SearchComponent {
 
   searchData: string = ''
-  s: string = ''
 
-  clearBtn(): void {
-    newFunction().s = search.next(this.searchData)
-    console.log(this.s);
+  clearBtn() {
     this.searchData = ''
-
-    function newFunction() {
-      return this;
-    }
   }
 
 }
