@@ -20,6 +20,7 @@ import { SearchServiceService } from './services/search-service.service';
 
 
 
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calc', component: CalculatorComponent },

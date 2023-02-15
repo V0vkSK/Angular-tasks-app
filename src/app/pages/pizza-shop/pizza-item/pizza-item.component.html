@@ -1,10 +1,15 @@
 <div class="container">
-  <div *ngFor="let pizza of pizzas" class="pizza-item">
+  <div *ngFor="let pizza of pizzass" class="pizza-item">
     <img class="pizza-img" src="/assets/{{ pizza.src }}" alt="pizza-img" />
     <h3 class="pizza-name">{{ pizza.name }}</h3>
     <div class="price-block">
       <pre class="pizza-price">Price: <span>{{ pizza.price }}</span> USD</pre>
-      <img (click)="onPressPlus()" class="plus-icon" src="../../../../assets/plus.svg" alt="plus-btn" />
+      <img
+        (click)="onPressPlus(pizza)"
+        class="plus-icon"
+        src="../../../../assets/plus.svg"
+        alt="plus-btn"
+      />
     </div>
   </div>
 </div>

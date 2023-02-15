@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
 import { SearchServiceService } from 'src/app/services/search-service.service';
+import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -9,12 +10,24 @@ import { SearchServiceService } from 'src/app/services/search-service.service';
 })
 
 
-export class SearchComponent {
+export class SearchComponent implements OnInit {
 
   searchData: string = ''
 
-  clearBtn() {
+  constructor(public svc: SearchServiceService) { }
+
+  ngOnInit(): void {
+    document.getElementById("myInput")?.addEventListener('input', () => { this.svc.sData$.next(this.searchData) })
+
+  }
+
+  onPressSearch() {
+
+  }
+
+  clearBtn(): void {
     this.searchData = ''
+    this.svc.sData$.next('')
   }
 
 }

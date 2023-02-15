@@ -9,5 +9,43 @@
       />
     </div>
     <div class="line"></div>
+    <!-- card in cart -->
+    <ul class="card-items">
+      <li *ngFor="let item of cartItems" class="card-item">
+        <img
+          src="/assets/{{ item.src }}"
+          alt="pizza-img"
+          class="card-item__img"
+        />
+        <div>
+          <p>{{ item.name }}</p>
+          <p>{{ item.price }}</p>
+        </div>
+        <p>{{ item.qty }}</p>
+        <img
+          src="../../../../assets/X.svg"
+          alt="remove-icon"
+          class="removeBtn"
+          (click)="removePizzaFromCart(item)"
+        />
+      </li>
+    </ul>
+
+    <!-- {/* ----------------------Bottom ---------------------*/} -->
+    <div class="cart-bottom">
+      <ul>
+        <li>
+          <span>Total:</span>
+          <div class="line-dashed"></div>
+          <b>{{ total }} USD</b>
+        </li>
+        <li>
+          <span>Tax 5%:</span>
+          <div class="line-dashed"></div>
+          <b> {{ total * 0.05 }} USD</b>
+        </li>
+      </ul>
+      <button>Send order</button>
+    </div>
   </div>
 </div>
